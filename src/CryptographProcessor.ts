@@ -64,7 +64,7 @@ export class CryptographProcessor {
      * @returns 暗号化キー
      */
     private createCommonKey(password: Password, salt: Salt): CommonKey {
-        const key = crypto.scryptSync(password.value, salt.value, this.keyLength).toString('base64').substring(0, this.keyLength);;
+        const key = crypto.scryptSync(password.value, salt.value, this.keyLength).toString('base64').substring(0, this.keyLength);
         const commonKey = new CommonKey(key);
         return commonKey;
 
