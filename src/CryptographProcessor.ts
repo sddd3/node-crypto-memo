@@ -14,6 +14,8 @@ export class CryptographProcessor {
      * 初期化ベクトル（initialization vector）は頭文字をとりIVと呼ばれることがあります。
      * 初期化ベクトルは通常、暗号化のたびに異なるランダムなビット列を使用します。
      * 暗号化のたびに初期化ベクトルを変えることによって、同じ平文でも暗号化文を異なる文字列にすることが可能です。
+     * ECBモードは弱点が多いので使用しない方が良いです。また、自身で実装しようとするとこのECBモードになりがちなので
+     * 暗号化を行う際はOSSなどを使用するべきです。
      */
     private readonly algorithm = 'aes-256-cbc';
     private readonly keyLength = 32;
